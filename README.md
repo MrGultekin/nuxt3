@@ -2,11 +2,13 @@
 
 Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
-## Setup
+## {JSON} Placeholder
+Use this API on https://jsonplaceholder.typicode.com/
 
 Make sure to install the dependencies:
 
 ```bash
+
 # yarn
 yarn install
 
