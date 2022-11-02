@@ -11,6 +11,14 @@ export default defineNuxtComponent({
           .then(response => response.json())
           .then(json => this.todoList = json)
     }
+  },
+  computed: {
+    completedTodos(){
+      return this.todoList.filter(todo => todo.completed);
+    },
+    remainingTodos(){
+      return this.todoList.filter(todo => !todo.completed);
+    }
   }
 })
 
@@ -29,6 +37,9 @@ export default defineNuxtComponent({
     </p>
     <h1>Mustafa`s Nuxt</h1>
     <button @click="fetchTodoList"> Click to fetch Data</button>
+    <p>Total todos :{{todoList.length}}</p>
+    <p>Completed todos :{{completedTodos.length}}</p>
+    <p>Uncompleted todos :{{remainingTodos.length}}</p>
     <!--    <pre>-->
     <!--      {{todoList}}-->
     <!--    </pre>-->
