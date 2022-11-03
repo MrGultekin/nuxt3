@@ -47,7 +47,7 @@ import {computed,ref} from "vue";
     <!--      {{todoList}}-->
     <!--    </pre>-->
 
-    <ul>
+    <ul :class="$style.list">
       <li v-for="todo in todoList" :key=" `todo-id-${todo.id}` ">
         <input type="checkbox" :checked="todo.completed"/>
         {{ todo.title }}
@@ -56,7 +56,12 @@ import {computed,ref} from "vue";
   </div>
 </template>
 
-
+<style module >
+.list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+</style>
 
 
 <!--<script>-->
